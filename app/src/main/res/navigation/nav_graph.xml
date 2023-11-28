@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/center_frag">
+
+    <fragment
+        android:id="@+id/center_frag"
+        android:name="com.skow.lab4.FragmentCenter"
+        android:label="Fragment Center"
+        tools:layout="@layout/fragment_center">
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_right"
+        android:name="com.skow.lab4.FragmentRight"
+        android:label="FragmentRight"
+        tools:layout="@layout/fragment_right">
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_left"
+        android:name="com.skow.lab4.FragmentLeft"
+        android:label="FragmentLeft"
+        tools:layout="@layout/fragment_left">
+    </fragment>
+    <action
+        android:id="@+id/action_to_right_frag"
+        app:destination="@+id/fragment_right"
+        app:popUpTo="@id/center_frag"
+        app:launchSingleTop="true"
+        />
+    <action
+        android:id="@+id/action_to_center_frag"
+        app:destination="@+id/center_frag"
+        app:popUpTo="@id/center_frag"
+        app:launchSingleTop="true"/>
+    <action
+        android:id="@+id/action_to_left_frag"
+        app:destination="@+id/fragment_left"
+        app:popUpTo="@id/center_frag"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false"/>
+</navigation>
+

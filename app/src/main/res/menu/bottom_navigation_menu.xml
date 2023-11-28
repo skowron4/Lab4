@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragment_left"
+        android:title="@string/left_fragment"
+        android:icon="@drawable/ic_left"/>
+    <item
+        android:id="@+id/center_frag"
+        android:title="@string/center_fragment"
+        android:icon="@drawable/ic_center"/>
+    <item
+        android:id="@+id/fragment_right"
+        android:title="@string/right_fragment"
+        android:icon="@drawable/ic_right"/>
+</menu>
