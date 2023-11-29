@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 
@@ -90,6 +91,30 @@ class FragmentCenter : Fragment(), RadioGroup.OnCheckedChangeListener {
         childFragmentManager.setFragmentResultListener("msgfromchild", viewLifecycleOwner){
             _, bundle -> val result = bundle.getString("msg1")
             (requireActivity().findViewById<View>(R.id.text) as TextView).text = result
+        }
+
+//        childFragmentManager.setFragmentResultListener("saved_data1", this) { _, bundle ->
+//            val value = bundle.getBoolean("string")
+//            // Wyświetlenie toastu z odebranymi danymi
+//            Toast.makeText(requireContext(), value, Toast.LENGTH_SHORT).show()
+//        }
+
+        childFragmentManager.setFragmentResultListener("saved_data1", viewLifecycleOwner)
+        { _, bundle ->
+            val toast: Toast = Toast.makeText(requireActivity(),
+                "Opcja1",
+                Toast.LENGTH_SHORT)
+            toast.show()
+        }
+
+        childFragmentManager.setFragmentResultListener("saved_data2", viewLifecycleOwner)
+        { _, bundle ->
+            val result = bundle.getString("string")
+
+            val toast: Toast = Toast.makeText(requireActivity(),
+                "Opcja2",
+                Toast.LENGTH_SHORT)
+            toast.show()
         }
 
         (requireActivity().findViewById(R.id.radioGroup) as RadioGroup)

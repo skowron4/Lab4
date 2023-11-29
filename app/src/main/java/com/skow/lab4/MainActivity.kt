@@ -38,4 +38,6 @@ class MainActivity : AppCompatActivity() {
         val navigationBar: NavigationBarView = findViewById(R.id.bottomNavigationView)
         navigationBar.setupWithNavController(navController)
     }
+
+
 }

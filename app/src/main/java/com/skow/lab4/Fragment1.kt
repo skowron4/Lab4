@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.RatingBar
+import android.widget.Toast
 import androidx.core.os.bundleOf
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,6 +28,7 @@ class Fragment1 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -42,6 +45,20 @@ class Fragment1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<View>(R.id.checkBox1).setOnClickListener { _ ->
+            val value = view.findViewById<CheckBox>(R.id.checkBox1).isChecked
+            val toast: Toast = Toast.makeText(requireActivity(),
+                "Opcja1",
+                Toast.LENGTH_SHORT)
+            toast.show()
+        }
+        view.findViewById<View>(R.id.checkBox2).setOnClickListener { _ ->
+            val toast: Toast = Toast.makeText(requireActivity(),
+                "Opcja2",
+                Toast.LENGTH_SHORT)
+            toast.show()
+        }
 
         view.findViewById<Button>(R.id.button_send1).setOnClickListener {
                 _ -> val value = view.findViewById<RatingBar>(R.id.ratingBar).rating
